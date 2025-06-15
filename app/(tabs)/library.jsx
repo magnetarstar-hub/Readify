@@ -31,6 +31,8 @@ export default function LibraryScreen() {
           data={savedBooks}
           keyExtractor={(item) => item.id}
           renderItem={renderItem}
+          contentContainerStyle={styles.listContainer}
+          numColumns={3}
         />
       )}
     </View>
@@ -39,32 +41,38 @@ export default function LibraryScreen() {
 }
 
 const styles = StyleSheet.create({
-    container: { padding: 20, flex: 1 },
-    card: {
-      flexDirection: 'row',
-      marginBottom: 10,
-      backgroundColor: '#f2f2f2',
-      padding: 10,
-      borderRadius: 8,
-      alignItems: 'center',
+    container: {
+        flex: 1,
+        padding: 10,
     },
-    thumbnail: {
-      width: 50,
-      height: 75,
-      marginRight: 10,
-    },
-    details: {
-      flex: 1,
-    },
-    title: {
-      fontSize: 16,
-      fontWeight: '600',
-      marginBottom: 5,
+    listContainer: {
+        paddingBottom: 20,
     },
     empty: {
-      fontSize: 16,
-      textAlign: 'center',
-      marginTop: 50,
-      color: '#666',
+        textAlign: 'center',
+        marginTop: 20,
+        fontSize: 16,
+        color: '#888',
     },
-  });
+    Card: {
+        flex: 1,
+        margin: 5,
+        borderRadius: 8,
+        backgroundColor: '#1a1a1a',
+        padding: 10,
+        alignItems: 'center',
+    },
+    thumbnail: {
+        width: 100,
+        height: 150,
+        borderRadius: 5,
+    },
+    details: {
+        marginTop: 10,
+        alignItems: 'center',
+    },
+    title: {
+        fontSize: 16,
+        fontWeight: 'bold',
+    },
+});

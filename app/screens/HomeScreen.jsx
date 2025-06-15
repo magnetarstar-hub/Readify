@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { View, TextInput, Button, FlatList, Text, StyleSheet, Image } from 'react-native';
 import { useBookStore } from '../store/bookStore';
-
 export default function HomeScreen() {
   const [query, setQuery] = useState('');
   const [results, setResults] = useState([]);
