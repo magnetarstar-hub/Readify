@@ -1,5 +1,5 @@
 import React  from "react";
-import { View, FlatList,Set, Text, Button,StyleSheet } from "react-native";
+import { View, FlatList, Text, Button, StyleSheet, Image } from 'react-native';
 import { useBookStore } from "../store/bookStore";
 
 export default function LibraryScreen() {
@@ -30,7 +30,7 @@ export default function LibraryScreen() {
         <FlatList
           data={savedBooks}
           keyExtractor={(item) => item.id}
-          renderItem={renderBookItem}
+          renderItem={renderItem}
         />
       )}
     </View>
