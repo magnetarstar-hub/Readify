@@ -27,7 +27,11 @@ export default function HomeScreen() {
         <View style={styles.info}>
           <Text style={styles.title}>{title || 'No Title'}</Text>
           {authors && <Text style={styles.authors}>{authors.join(', ')}</Text>}
-          <Button title="Save" onPress={() => saveBook(item)} />
+          <Button
+            style={styles.saveButton}
+            title="Save"
+            onPress={() => saveBook(item)}
+          />
         </View>
       </View>
     );
@@ -46,47 +50,61 @@ export default function HomeScreen() {
         data={results}
         keyExtractor={(item) => item.id}
         renderItem={renderItem}
+        contentContainerStyle={styles.listContainer}
+        numColumns={3}
       />
     </View>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
-    padding: 16,
-    backgroundColor: '#000',
-    flex: 1,
-  },
-  input: {
-    backgroundColor: '#fff',
-    padding: 10,
-    borderRadius: 8,
-    marginBottom: 10,
-  },
-  card: {
-    flexDirection: 'row',
-    backgroundColor: '#1e1e1e',
-    padding: 10,
-    borderRadius: 8,
-    marginBottom: 10,
-    alignItems: 'center',
-  },
-  thumbnail: {
-    width: 50,
-    height: 75,
-    marginRight: 10,
-    borderRadius: 4,
-  },
-  info: {
-    flex: 1,
-  },
-  title: {
-    color: '#fff',
-    fontWeight: 'bold',
-    marginBottom: 4,
-  },
-  authors: {
-    color: '#ccc',
-    marginBottom: 6,
-  },
-});
+    container: {
+      padding: 16,
+      backgroundColor: '#000',
+      flex: 1,
+    },
+    input: {
+      backgroundColor: '#fff',
+      padding: 10,
+      borderRadius: 8,
+      marginBottom: 10,
+    },
+    listContainer: {
+      justifyContent: 'space-between',
+    },
+    card: {
+      flex: 1,
+      margin: 5,
+      backgroundColor: '#1a1a1a',
+      padding: 10,
+      borderRadius: 8,
+      alignItems: 'center',
+      maxWidth: '31%',
+    },
+    thumbnail: {
+      width: 70,
+      height: 100,
+      borderRadius: 4,
+      marginBottom: 8,
+    },
+    info: {
+      alignItems: 'center',
+    },
+    title: {
+      color: '#fff',
+      fontWeight: 'bold',
+      fontSize: 12,
+      textAlign: 'center',
+    },
+    authors: {
+      color: '#ccc',
+      fontSize: 10,
+      textAlign: 'center',
+      marginBottom: 4,
+    },
+    saveButton: {
+      borderRadius: 4,
+      backgroundColor: '#007BFF',
+      color: '#fff',
+    },
+  });
